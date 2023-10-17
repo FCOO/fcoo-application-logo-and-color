@@ -20,8 +20,14 @@ Defines default application-color
 
 
 
-//APPLICATION-BASE-COLOR MIXIN
+/***********************************************
+Defines --fcoo-app-base-color
+Defalut is = DALO color in "Forsvarsministeriets koncernfælles Designmanual 2018"
+Can be changed by mixin application-base-color( new-color ) in src/_fcoo-application-base-color-mixin.scss
+************************************************/
 @import "fcoo-application-base-color-mixin";
 
-
-@include application-base-color();
+:root {
+    --_fcoo-default-app-base-color  : $fcoo-app-default-base-color;
+    --fcoo-app-base-color           : var(--_fcoo-app-base-color, var(--_fcoo-default-app-base-color));
+}

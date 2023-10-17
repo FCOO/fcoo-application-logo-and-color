@@ -1,16 +1,13 @@
 /***********************************************
 fcoo-application-base-color-mixin
 
-Defines application-base-color = Background color for loading etc. =
-DALO color in "Forsvarsministeriets koncernfælles Designmanual 2018"
+Defines application-base-color = Background color for loading etc.
 ************************************************/
 
 $fcoo-app-default-base-color: #3f5b58;  //DALO color in "Forsvarsministeriets koncernfælles Designmanual 2018"
 
-
-@mixin application-base-color($color: $fcoo-app-default-base-color){
-
+@mixin application-base-color($color){
     :root {
-        --fcoo-app-base-color: #{$color};
+        --_fcoo-app-base-color: #{$color};
     }
 }

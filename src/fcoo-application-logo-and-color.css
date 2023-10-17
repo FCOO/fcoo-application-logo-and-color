@@ -5,11 +5,16 @@ fcoo-application-logo-and-color.scss,
 Defines default application-color
 ************************************************/
 /***********************************************
+Defines --fcoo-app-base-color
+Defalut is = DALO color in "Forsvarsministeriets koncernfælles Designmanual 2018"
+Can be changed by mixin application-base-color( new-color ) in src/_fcoo-application-base-color-mixin.scss
+************************************************/
+/***********************************************
 fcoo-application-base-color-mixin
 
-Defines application-base-color = Background color for loading etc. =
-DALO color in "Forsvarsministeriets koncernfælles Designmanual 2018"
+Defines application-base-color = Background color for loading etc.
 ************************************************/
 :root {
-  --fcoo-app-base-color: #3f5b58;
+  --_fcoo-default-app-base-color: $fcoo-app-default-base-color;
+  --fcoo-app-base-color: var(--_fcoo-app-base-color, var(--_fcoo-default-app-base-color));
 }
