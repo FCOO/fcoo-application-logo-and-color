@@ -1,0 +1,38 @@
+{
+  "name": "fcoo-application-logo-and-color",
+  "version": "0.0.1",
+  "homepage": "https://github.com/FCOO/fcoo-application-logo-and-color",
+  "authors": [
+    "Niels Holt"
+  ],
+  "description": "",
+  "main": [
+    "dist/fcoo-application-logo-and-color.js",
+    "dist/fcoo-application-logo-and-color.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/FCOO/fcoo-application-logo-and-color.git"
+  },
+  "dependencies": {
+    "jquery": "latest"
+  },
+  "devDependencies": {
+    "bourbon": "latest",
+    "modernizr-mixin": "latest",
+    "mathsass": "latest",
+    "modernizr-scss": "FCOO/modernizr-scss#latest",
+    "sass-color-helpers": "latest"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "moduleType": [
+    "es6"
+  ]
+}

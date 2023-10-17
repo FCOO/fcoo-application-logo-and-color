@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/***********************************************
+fcoo-application-logo-and-color.scss,
+
+Defines default application-color
+************************************************/
+/***********************************************
+fcoo-application-base-color-mixin
+
+Defines application-base-color = Background color for loading etc. =
+DALO color in "Forsvarsministeriets koncernfælles Designmanual 2018"
+************************************************/
+:root {
+  --fcoo-app-base-color: #3f5b58;
+}

@@ -1,0 +1,27 @@
+/***********************************************
+fcoo-application-logo-and-color.scss,
+
+Defines default application-color
+************************************************/
+//BOURBON - http://bourbon.io/
+@import "../bower_components/bourbon/core/bourbon";
+
+//MODERNIZR-MIXIN - https://github.com/danielguillan/modernizr-mixin
+@import "../bower_components/modernizr-mixin/stylesheets/modernizr";
+
+//MATHSASS - https://github.com/terkel/mathsass
+@import "../bower_components/mathsass/dist/math";
+
+//MODERNIZR-SCSS - https://github.com/FCOO/modernizr-scss
+@import "../bower_components/modernizr-scss/dist/modernizr-scss";
+
+//COLOR-HELPER
+@import "../bower_components/sass-color-helpers/stylesheets/color-helpers";
+
+
+
+//APPLICATION-BASE-COLOR MIXIN
+@import "fcoo-application-base-color-mixin";
+
+
+@include application-base-color();
