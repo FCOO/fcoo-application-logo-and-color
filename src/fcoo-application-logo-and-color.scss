@@ -28,10 +28,10 @@ Can be changed by mixin application-base-color( new-color ) in src/_fcoo-applica
 @import "fcoo-application-base-color-mixin";
 
 :root {
-    --_fcoo-default-app-base-color     : $fcoo-app-default-base-color;
+    --_fcoo-default-app-base-color     : #{$fcoo-app-default-base-color};
     --fcoo-app-base-color              : var(--_fcoo-app-base-color, var(--_fcoo-default-app-base-color));
 
-    --_fcoo-default-app-base-text-color: $fcoo-app-default-base-text-color;
+    --_fcoo-default-app-base-text-color: #{$fcoo-app-default-base-text-color};
     --fcoo-app-base-text-color         : var(--_fcoo-app-base-text-color, var(--_fcoo-default-app-base-text-color));
 
 }

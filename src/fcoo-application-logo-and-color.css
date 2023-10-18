@@ -15,8 +15,8 @@ fcoo-application-base-color-mixin
 Defines application-base-color = Background color for loading etc.
 ************************************************/
 :root {
-  --_fcoo-default-app-base-color: $fcoo-app-default-base-color;
+  --_fcoo-default-app-base-color: #3f5b58;
   --fcoo-app-base-color: var(--_fcoo-app-base-color, var(--_fcoo-default-app-base-color));
-  --_fcoo-default-app-base-text-color: $fcoo-app-default-base-text-color;
+  --_fcoo-default-app-base-text-color: #ffffff;
   --fcoo-app-base-text-color: var(--_fcoo-app-base-text-color, var(--_fcoo-default-app-base-text-color));
 }
