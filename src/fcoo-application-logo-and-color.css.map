@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["fcoo-application-logo-and-color.scss","_fcoo-application-base-color-mixin.scss"],"names":[],"mappings":";AAAA;AAAA;;AAAA;AAAA;AAsBA;AAAA;AAAA;AAAA;AAAA;ACtBA;AAAA;;AAAA;AAAA;AD6BA;EACI;EACA","file":"fcoo-application-logo-and-color.css"}
+{"version":3,"sourceRoot":"","sources":["fcoo-application-logo-and-color.scss","_fcoo-application-base-color-mixin.scss"],"names":[],"mappings":";AAAA;AAAA;;AAAA;AAAA;AAsBA;AAAA;AAAA;AAAA;AAAA;ACtBA;AAAA;;AAAA;AAAA;AD6BA;EACI;EACA;EAEA;EACA","file":"fcoo-application-logo-and-color.css"}
