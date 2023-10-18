@@ -10,6 +10,6 @@ $fcoo-app-default-base-text-color: #ffffff;
 @mixin application-base-color($color){
     :root {
         --_fcoo-app-base-color     : #{$color};
-        --_fcoo-app-base-text-color: ch-best-color-contrast($base: $color, $colors: (#fff, #000), $tolerance: 0);
+        --_fcoo-app-base-text-color: #{ch-best-color-contrast($base: $color, $colors: (#fff, #000), $tolerance: 0)};
     }
 }
