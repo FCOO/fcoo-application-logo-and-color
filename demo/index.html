@@ -18,9 +18,16 @@
 	
 	
 	<script src="bower_components.js"></script>
+	<script src="../src/fcoo-application-loading.js"></script>
 	<script src="../src/fcoo-application-logo-and-color.js"></script>
+	<script src="../src/fcoo-application-logo.js"></script>
 	<script>
-
+        window.fcoo.createLoading('Skifter logo efter 5 sek og forsvinder efter 10 sek :-)');
+        
+        window.fcoo.setApplicationLogo('fcoo');
+        window.setTimeout(() => { window.fcoo.setApplicationLogo('fmn'); },  5000);
+        window.setTimeout(() => { $('html').modernizrOff('loading');     }, 10000);
+        
 	</script>
 </body>
 </html>

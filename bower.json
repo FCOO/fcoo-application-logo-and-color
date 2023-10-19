@@ -1,6 +1,6 @@
 {
   "name": "fcoo-application-logo-and-color",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "homepage": "https://github.com/FCOO/fcoo-application-logo-and-color",
   "authors": [
     "Niels Holt"
@@ -15,7 +15,9 @@
     "url": "git://github.com/FCOO/fcoo-application-logo-and-color.git"
   },
   "dependencies": {
-    "jquery": "latest"
+    "jquery": "latest",
+    "modernizr-javascript": "fcoo/modernizr-javascript#latest",
+    "fcoo-data-files": "fcoo/fcoo-data-files#latest"
   },
   "devDependencies": {
     "bourbon": "latest",
