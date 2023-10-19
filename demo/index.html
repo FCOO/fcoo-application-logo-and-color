@@ -22,11 +22,14 @@
 	<script src="../src/fcoo-application-logo-and-color.js"></script>
 	<script src="../src/fcoo-application-logo.js"></script>
 	<script>
-        window.fcoo.createLoading('Skifter logo efter 5 sek og forsvinder efter 10 sek :-)');
+    
+        $('body').append('<div class="fcoo-app-standard-logo" style="border:1px solid black"></div>');
+        window.fcoo.createLoading('5s: skift logo, 10s: loading færdig, 15s: skift logo tilbage:-)');
         
         window.fcoo.setApplicationLogo('fcoo');
-        window.setTimeout(() => { window.fcoo.setApplicationLogo('fmn'); },  5000);
-        window.setTimeout(() => { $('html').modernizrOff('loading');     }, 10000);
+            window.setTimeout(() => { window.fcoo.setApplicationLogo('fmn');  },  5000);
+            window.setTimeout(() => { $('html').modernizrOff('loading');      }, 10000);
+            window.setTimeout(() => { window.fcoo.setApplicationLogo('fcoo'); }, 15000);
         
 	</script>
 </body>

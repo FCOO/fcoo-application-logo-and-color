@@ -4,9 +4,6 @@ fcoo-application-logo-and-color.scss,
 
 Defines default application-color
 ************************************************/
-/***********************************************
-fcoo-application-loading
-***********************************************/
 /*****************************************************
 LOADING
 Style for the <div> covering the page during loading
@@ -59,6 +56,7 @@ div.loading > div.version {
   font-size: 2rem;
   top: 0;
   height: 3rem;
+  line-height: 3rem;
   margin-bottom: -3rem;
   background-color: red;
   color: white;
@@ -119,11 +117,35 @@ html.no-loading div.loading:before, html.no-loading div.loading > div {
   display: none !important;
 }
 
-/***********************************************
+/*****************************************************
+
+*****************************************************/
+:root {
+  --fcoo-app-logo-wh-ratio: var(--_fcoo-app-logo-wh-ratio, 1);
+}
+
+.fcoo-app-standard-logo {
+  width: 200px;
+  height: 160px;
+  background-image: var(--fcoo-app-logo-url);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+html.logo-portrait .fcoo-app-standard-logo {
+  width: calc(160px * var(--fcoo-app-logo-wh-ratio));
+  height: 160px;
+}
+html.no-logo-portrait .fcoo-app-standard-logo {
+  width: 200px;
+  height: calc(200px / var(--fcoo-app-logo-wh-ratio));
+}
+
+/*****************************************************
 Defines --fcoo-app-base-color and --fcoo-app-base-text-color
 Defaults is = DALO color in "Forsvarsministeriets koncernfælles Designmanual 2018"
 Can be changed by mixin application-base-color( new-color ) in src/_fcoo-application-base-color-mixin.scss
-************************************************/
+*****************************************************/
 /***********************************************
 fcoo-application-base-color-mixin
 

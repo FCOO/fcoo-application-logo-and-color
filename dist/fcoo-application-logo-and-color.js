@@ -102,6 +102,10 @@ Load logos and sets css-var
     function logoExists( img, fileName, fileNamePostfix){
         ns.path.setAssetsDataFileNameAsCssVar('fcoo-app-logo' + fileNamePostfix + '-url', 'logos', fileName);
         $('html').modernizrToggle('logo-portrait', img.height > img.width);
+
+        //Set internal css-var _fcoo-app-logo-wh-ratio
+        var root = document.querySelector(':root');
+        root.style.setProperty('--_fcoo-app-logo-wh-ratio', img.width / img.height);
     }
 
     ns.setApplicationLogo = function( fileNamePrefix ){

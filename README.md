@@ -48,6 +48,14 @@ The loading-page is hidden by setting modernizr-test `"loading"` off using [mode
 
 ### scss
 
+#### Standard logo
+
+To have the logo in a "standard" size (160-200px) just add class `"fcoo-app-standard-logo"` to a element
+
+    <div class="fcoo-app-standard-logo"/>
+
+See [demo](http://FCOO.github.io/fcoo-application-logo-and-color/demo/)
+
 #### `@mixin application-base-color($color)`
 Located in `src/_fcoo-application-base-color-mixin.scss`
 
