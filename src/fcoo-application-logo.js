@@ -46,12 +46,12 @@ Load logos, sets css-var, and write logo etc. in console
 
 
     /********************************************************
-    ns.consoleApplicationLogo( textList = [] )
+    ns.consoleApplicationLogo(ownerId,  textList = [] )
     Write the logo and strings in textList in console
     ********************************************************/
     /* eslint-disable no-console, no-constant-condition*/
     ns.consoleApplicationLogo = function(ownerId, textList = [] ){
-        var i, ownerLogoAndText = ownerLogos[ownerId] || [''];
+        var i, ownerLogoAndText = ownerLogos[ownerId || 'dummy'] || [''];
 
         for (i=0; i<ownerLogoAndText.length; i++)
             ownerLogoAndText[i] = ownerLogoAndText[i].replaceAll('#', '█');

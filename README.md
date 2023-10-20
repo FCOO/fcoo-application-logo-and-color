@@ -52,7 +52,11 @@ Logos for `ownerId` = `"fcoo"`, `"geometoc"`, and `"nordefco"` are defined
     
 ### Adding `<mega>`-tags and adding favicon
 
+To add default `<meta>` and favicons call
 
+        window.fcoo.addApplicationMetaAndFavicon(owner:STRING (default = "fcoo"), logo:STRING (default = "fcoo"));
+
+If will also set favicon color to the color set by `@mixin application-base-color($color)` (see below)
 
 ### Loading page
 
