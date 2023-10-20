@@ -3,7 +3,13 @@
 
 
 ## Description
-css, scss-mixin, and js for setting application-colors, logo and creating loading page for FCOO web applications and pages
+css, scss-mixin, and js for
+ 
+- setting application-colors
+- setting logo
+- console logo and application info
+- adding `<mega>`-tags and adding favicon
+- creating loading page for FCOO web applications and pages
 
 ## Installation
 ### bower
@@ -32,6 +38,21 @@ There are currently two logos in production
 - `"fnm"`: [fmm.svg](https://app.fcoo.dk/assets/logos/fmn.svg) and [fmm_black.svg](https://app.fcoo.dk/assets/logos/fmn_black.svg) 
 
 **Default is "fcoo"**
+
+### Console logo and application info
+
+To 'write' logo and information about the application in the browser console call
+
+    window.fcoo.consoleApplicationLogo( ownerId:STRING, textList:[]STRING );
+
+It will console the logo and the text in `textList`
+
+Logos for `ownerId` = `"fcoo"`, `"geometoc"`, and `"nordefco"` are defined 
+
+    
+### Adding `<mega>`-tags and adding favicon
+
+
 
 ### Loading page
 

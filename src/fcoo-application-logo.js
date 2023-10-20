@@ -1,7 +1,7 @@
 /****************************************************************************
 fcoo-application-logo.js
 
-Load logos and sets css-var
+Load logos, sets css-var, and write logo etc. in console
 ****************************************************************************/
 (function ($, window/*, document, undefined*/) {
 	"use strict";
@@ -21,6 +21,9 @@ Load logos and sets css-var
         root.style.setProperty('--_fcoo-app-logo-wh-ratio', img.width / img.height);
     }
 
+    /********************************************************
+    ns.setApplicationLogo( fileNamePrefix )
+    ********************************************************/
     ns.setApplicationLogo = function( fileNamePrefix ){
         //First set fab-text-color-is-white (=fcoo-app-base-text-color-is-white)
         var fcooAppBaseTextColor = ns.path.getCssVar('fcoo-app-base-text-color') || '#ffffff',
@@ -39,4 +42,69 @@ Load logos and sets css-var
                 img[index].onload = () => {logoExists.call( null, img[index], fileName, fileNamePostfix  ); };
         });
     };
+
+
+
+    /********************************************************
+    ns.consoleApplicationLogo( textList = [] )
+    Write the logo and strings in textList in console
+    ********************************************************/
+    /* eslint-disable no-console, no-constant-condition*/
+    ns.consoleApplicationLogo = function(ownerId, textList = [] ){
+        var i, ownerLogoAndText = ownerLogos[ownerId] || [''];
+
+        for (i=0; i<ownerLogoAndText.length; i++)
+            ownerLogoAndText[i] = ownerLogoAndText[i].replaceAll('#', '█');
+
+        ownerLogoAndText = ownerLogoAndText.concat(textList);
+        var maxTextWidth = 0;
+        for (i=0; i<ownerLogoAndText.length; i++)
+            maxTextWidth = Math.max(maxTextWidth, ownerLogoAndText[i].length);
+
+        for (i=0; i<ownerLogoAndText.length; i++){
+            var txt = ownerLogoAndText[i];
+            if (txt == '-')
+                txt = String('-').repeat(maxTextWidth);
+            if (txt.length < maxTextWidth)
+                txt = txt.padStart((txt.length + maxTextWidth)/2);
+            console.log(txt);
+        }
+    };
+    /* eslint-enable no-console, no-constant-condition */
+
+    //Created on https://www.messletters.com/en/big-text/ using style = banner3 and addded an extra space between the letters
+    var ownerLogos = {
+        fcoo: [
+            '########   ######    #######    ####### ',
+            '##        ##    ##  ##     ##  ##     ##',
+            '##        ##        ##     ##  ##     ##',
+            '######    ##        ##     ##  ##     ##',
+            '##        ##        ##     ##  ##     ##',
+            '##        ##    ##  ##     ##  ##     ##',
+            '##         ######    #######    ####### '         ],
+
+
+        geometoc: [
+            ' ######    ########   #######   ##     ##  ########  ########   #######    ###### ',
+            '##    ##   ##        ##     ##  ###   ###  ##           ##     ##     ##  ##    ##',
+            '##         ##        ##     ##  #### ####  ##           ##     ##     ##  ##      ',
+            '##   ####  ######    ##     ##  ## ### ##  ######       ##     ##     ##  ##      ',
+            '##    ##   ##        ##     ##  ##     ##  ##           ##     ##     ##  ##      ',
+            '##    ##   ##        ##     ##  ##     ##  ##           ##     ##     ##  ##    ##',
+            ' ######    ########   #######   ##     ##  ########     ##      #######    ###### '
+        ],
+
+        nordefco: [
+            '##    ##   #######   ########   ########   ########  ########   ######    ####### ',
+            '###   ##  ##     ##  ##     ##  ##     ##  ##        ##        ##    ##  ##     ##',
+            '####  ##  ##     ##  ##     ##  ##     ##  ##        ##        ##        ##     ##',
+            '## ## ##  ##     ##  ########   ##     ##  ######    ######    ##        ##     ##',
+            '##  ####  ##     ##  ##   ##    ##     ##  ##        ##        ##        ##     ##',
+            '##   ###  ##     ##  ##    ##   ##     ##  ##        ##        ##    ##  ##     ##',
+            '##    ##   #######   ##     ##  ########   ########  ##         ######    ####### '
+        ]
+    };
+
+
+
 }(jQuery, this, document));
