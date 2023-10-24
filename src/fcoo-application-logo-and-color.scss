@@ -114,6 +114,8 @@ div.loading {
 
 
             span {
+                //Native font stack from Bootstrap 5 - see https://getbootstrap.com/docs/5.3/content/reboot/#native-font-stack
+                font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif;
                 color: var(--fcoo-app-base-text-color);
                 width: .25em;
 

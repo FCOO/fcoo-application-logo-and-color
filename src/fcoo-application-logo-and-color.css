@@ -94,6 +94,7 @@ div.loading > div.dots {
   justify-content: center;
 }
 div.loading > div.dots span {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
   color: var(--fcoo-app-base-text-color);
   width: 0.25em;
   animation-name: blink;
