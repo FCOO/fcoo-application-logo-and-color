@@ -10,11 +10,18 @@ Methods for creating <meta> in <head> and adding favicons
 	//Create fcoo-namespace
     var ns = window.fcoo = window.fcoo || {};
 
+
+    //fcoo.viewport_no_scalable: BOOLEAN; If true the viewpoint gets no scalable. Must be set prio to addApplicationMetaAndFavicon is called
+    ns.viewport_no_scalable = ns.viewport_no_scalable || false;
+
     ns.addApplicationMetaAndFavicon = function(owner = "fcoo", logo = 'fcoo'){
         var tagList = [
                 {'tag': 'meta', 'charset': "utf-8"},
                 {'tag': 'meta', 'http-equiv': 'x-dns-prefetch-control',     'content': 'on'},
-                {'tag': 'meta', 'name'      : 'viewport',                   'content': 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'},
+
+                ns.viewport_no_scalable ?
+                    {'tag': 'meta', 'name': 'viewport', 'content': 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'} :
+                    {'tag': 'meta', 'name': 'viewport', 'content': 'width=device-width, initial-scale=1.0'},
                 {'tag': 'meta', 'name'      : 'copyright',                  'content': '{OWNER}'},
                 {'tag': 'meta', 'name'      : 'google',                     'content': 'notranslate'},
 
