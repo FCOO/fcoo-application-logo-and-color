@@ -94,7 +94,8 @@ Load logos, sets css-var, and write logo etc. in console
 	"use strict";
 
     //Create fcoo-namespace
-    var ns = window.fcoo = window.fcoo || {};
+    var ns = window.fcoo = window.fcoo || {}/*,
+        nsColor = ns.color = ns.color || {}*/;
 
     //Set modernizr-test 'logo-portrait' off
     $('html').modernizrOff('logo-portrait');
@@ -104,8 +105,7 @@ Load logos, sets css-var, and write logo etc. in console
         $('html').modernizrToggle('logo-portrait', img.height > img.width);
 
         //Set internal css-var _fcoo-app-logo-wh-ratio
-        var root = document.querySelector(':root');
-        root.style.setProperty('--_fcoo-app-logo-wh-ratio', img.width / img.height);
+        ns.setRootVar('--_fcoo-app-logo-wh-ratio', img.width / img.height);
     }
 
     /********************************************************
@@ -113,7 +113,7 @@ Load logos, sets css-var, and write logo etc. in console
     ********************************************************/
     ns.setApplicationLogo = function( fileNamePrefix ){
         //First set fab-text-color-is-white (=fcoo-app-base-text-color-is-white)
-        var fcooAppBaseTextColor = ns.path.getCssVar('fcoo-app-base-text-color') || '#ffffff',
+        var fcooAppBaseTextColor = ns.getRootVar('fcoo-app-base-text-color') || '#ffffff',
             textColorIsWhite = fcooAppBaseTextColor.includes("000");
         $('html').modernizrToggle('fab-text-color-is-white', !!textColorIsWhite);
 
@@ -167,7 +167,7 @@ Load logos, sets css-var, and write logo etc. in console
         for (i=0; i<allLetters.length; i++)
             space.push('      ');
 
-        let text = logoText.toUpperCase();//'NR-2024';
+        let text = logoText.toUpperCase();
 
         let ownerLogoAndText = [];
         let firstChar = true;
@@ -263,8 +263,7 @@ Methods for creating <meta> in <head> and adding favicons
             yyymmdd = pad(date.getFullYear()) + pad(date.getMonth()) + pad(date.getDate()),
 
             //Get color = value of css-var --fcoo-app-base-color
-            root = document.querySelector(':root'),
-            color = window.getComputedStyle(root).getPropertyValue('--fcoo-app-base-color');
+            color = ns.getRootVar('--fcoo-app-base-color');
 
         //values = {id:value} replacing id with value in meta and favicon
         var values = {

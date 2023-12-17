@@ -51,8 +51,7 @@ Methods for creating <meta> in <head> and adding favicons
             yyymmdd = pad(date.getFullYear()) + pad(date.getMonth()) + pad(date.getDate()),
 
             //Get color = value of css-var --fcoo-app-base-color
-            root = document.querySelector(':root'),
-            color = window.getComputedStyle(root).getPropertyValue('--fcoo-app-base-color');
+            color = ns.getRootVar('--fcoo-app-base-color');
 
         //values = {id:value} replacing id with value in meta and favicon
         var values = {

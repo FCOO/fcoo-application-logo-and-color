@@ -18,6 +18,8 @@ Defines default application-color
 //COLOR-HELPER
 @import "../bower_components/sass-color-helpers/stylesheets/color-helpers";
 
+//FCOO-COLORS
+@import "../bower_components/fcoo-colors/src/fcoo-colors-include";
 
 
 /*****************************************************
@@ -188,24 +190,3 @@ div.loading {
     background-position : center;
 }
 
-
-
-
-
-
-
-/*****************************************************
-Defines --fcoo-app-base-color and --fcoo-app-base-text-color
-Defaults is = DALO color in "Forsvarsministeriets koncernfælles Designmanual 2018"
-Can be changed by mixin application-base-color( new-color ) in src/_fcoo-application-base-color-mixin.scss
-*****************************************************/
-@import "fcoo-application-base-color-mixin";
-
-:root {
-    --_fcoo-default-app-base-color     : #{$fcoo-app-default-base-color};
-    --fcoo-app-base-color              : var(--_fcoo-app-base-color, var(--_fcoo-default-app-base-color));
-
-    --_fcoo-default-app-base-text-color: #{$fcoo-app-default-base-text-color};
-    --fcoo-app-base-text-color         : var(--_fcoo-app-base-text-color, var(--_fcoo-default-app-base-text-color));
-
-}

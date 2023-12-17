@@ -8,25 +8,34 @@
 	<meta name='copyright' content='FCOO'>
 	<meta name='owner' content='FCOO'>
 
+    <link  href="bower_components.css" rel="stylesheet">	
     <link  href="../src/fcoo-application-logo-and-color.css" rel="stylesheet">	
     <style>
         body {
             font-family: Verdana;
         }
+        
+        :root.color1 {  --_fcoo-app-base-color: #FFFFFF; }            
+        :root.color2 {  --_fcoo-app-base-color: #FF0000; }            
+        :root.color3 {  --_fcoo-app-base-color: pink; }            
+        
     </style>        
 </head>
 
 <body>
 
-
-	
-	
 	<script src="bower_components.js"></script>
 	<script src="../src/fcoo-application-loading.js"></script>
 	<script src="../src/fcoo-application-logo-and-color.js"></script>
 	<script src="../src/fcoo-application-logo.js"></script>
 	<script src="../src/fcoo-application-meta-and-favicon.js"></script> 
 	<script>
+        [1,2,3,4,5,6,7,8,9].forEach( (id) => {
+            if (window.location.href.includes('color='+id))
+                $('html').addClass('color'+id);
+        });
+        fcoo.color.setApplicationBaseColor( fcoo.getRootVar('fcoo-app-base-color') );
+    
     
         window.fcoo.consoleApplicationLogo('fcoo', ['-']);
         window.fcoo.consoleApplicationLogo('geometoc', ['-']);
