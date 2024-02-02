@@ -72,7 +72,7 @@ Standard font-family from fmi.dk and Forsvarsministeriets koncernfælles Designm
 }
 
 /*****************************************************
-LOADING
+LOADING and WORKING
 Style for the <div> covering the page during loading
 *****************************************************/
 html.loading .hide-for-loading {
@@ -183,6 +183,31 @@ html.no-loading div.loading {
 }
 html.no-loading div.loading:before, html.no-loading div.loading > div {
   display: none !important;
+}
+
+html.working .hide-for-working {
+  display: none !important;
+}
+
+html.no-working .show-for-working {
+  display: none !important;
+}
+
+div.working {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2147483647;
+  background-color: white;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: progress;
+  --fa-animation-duration: 1s;
 }
 
 /*****************************************************

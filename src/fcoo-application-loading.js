@@ -52,4 +52,37 @@ Create and display loading page
             ns.createLoading();
     });
 
+    /******************************************************
+    workingOn /workingOff
+    Show / hide rotating icon when 'working...'
+    Delay of 1s to prevent flicing when working in short period
+    ******************************************************/
+    var workingCreated = false,
+        workingTimeoutId;
+    ns.workingOn = function(){
+        $('html').modernizrOff('working');
+
+        if (!workingCreated){
+            $('<div/>')
+                .addClass('working show-for-working')
+                .append($(
+                    '<span class="fa-stack fa-3x">'+
+                        '<i class="far fa-circle fa-stack-1x" style="color:gray"></i>' +
+                        '<i class="far fa-spinner-third fa-spin fa-stack-1x"></i>' +
+                    '</span>')
+                )
+                .prependTo( $('body') );
+            workingCreated = true;
+        }
+
+        workingTimeoutId = window.setTimeout(() => { $('html').modernizrOn('working') }, 1000);
+
+    }
+
+
+    ns.workingOff = function(){
+        window.clearTimeout(workingTimeoutId);
+        $('html').modernizrOff('working');
+    }
+
 }(jQuery, this, document));

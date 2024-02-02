@@ -33,7 +33,7 @@ $fmn-font-family: Verdana, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto
 
 
 /*****************************************************
-LOADING
+LOADING and WORKING
 Style for the <div> covering the page during loading
 *****************************************************/
 
@@ -160,6 +160,32 @@ div.loading {
             display: none !important;
         }
     }
+}
+
+
+//Create Modernizr-classe for working
+@include show-and-hide-for-modernizr-test( working, html, false, '', false );
+
+div.working {
+    position: absolute;
+    left   : 0;
+    top    : 0;
+    width  : 100%;
+    height : 100%;
+    z-index: 2147483647;
+
+    background-color: white;//var(--fcoo-app-base-color);
+    opacity: .9;
+
+    //Sizing and placing the icon
+    display       : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items    : center;
+
+    cursor : progress;
+
+    --fa-animation-duration: 1s;
 }
 
 /*****************************************************

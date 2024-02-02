@@ -53,6 +53,12 @@
         window.setTimeout(() => { $('html').modernizrOff('loading');      }, 10000);
         window.setTimeout(() => { window.fcoo.setApplicationLogo('fcoo'); }, 15000);
         
+        $('body').on('click', () => {
+            window.fcoo.workingOn();
+            window.setTimeout(() => { window.fcoo.workingOff(); }, 5000);
+            
+        });            
+        
 	</script>
 </body>
 </html>
